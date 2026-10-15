@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("./assets/fonts/RedHatText-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 900;
+  font-style: normal;
+}
 @theme {
   --color-custom-red: hsl(14, 86%, 42%);
   --color-custom-green: hsl(159, 69%, 38%);
@@ -9,4 +15,5 @@
   --color-custom-rose-400: hsl(7, 20%, 60%);
   --color-custom-rose-500: hsl(12, 20%, 44%);
   --color-custom-rose-900: hsl(14, 65%, 9%);
+  --font-redhat: "Red Hat Text", sans-serif;
 }
