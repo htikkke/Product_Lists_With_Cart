@@ -1,5 +1,5 @@
-import Desserts from "./Desserts";
-import Cart from "./Cart";
+import Desserts from "./components/Desserts";
+import Cart from "./components/Cart";
 
 export default function App() {
   return (
