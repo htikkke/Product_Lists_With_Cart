@@ -1,8 +1,27 @@
+import addToCartIcon from "./assets/images/icon-add-to-cart.svg";
+
 export default function ProductCard({ product }) {
   return (
     <div className="flex flex-col mb-4">
       <div className="relative group">
-        <img src={product.image} />
+        <img
+          src={product.image.desktop}
+          alt={product.name}
+          className="w-full rounded-xl object-cover"
+        />
+        <button>
+          <img src={addToCartIcon} alt="add-button" className="w-5 h-5" />
+          <span className="text-custom-rose-900 text-sm">Add to Cart</span>
+        </button>
+      </div>
+      <div className="mt-10 px-1">
+        <p className="text-sm text-custom-rose-500">{product.category}</p>
+        <h3 className="font-semibold text-lg text-custom-rose-900 mt-1">
+          {product.name}
+        </h3>
+        <p className="font-bold text-lg mt-1 text-custom-red">
+          ${product.price.tofixed(2)}
+        </p>
       </div>
     </div>
   );
