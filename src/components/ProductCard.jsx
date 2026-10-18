@@ -1,17 +1,19 @@
-import addToCartIcon from "./assets/images/icon-add-to-cart.svg";
+import addToCartIcon from "../../public/assets/images/icon-add-to-cart.svg";
 
 export default function ProductCard({ product }) {
   return (
-    <div className="flex flex-col mb-4">
+    <div className="flex flex-col mb-4 font-redhat">
       <div className="relative group">
         <img
           src={product.image.desktop}
           alt={product.name}
           className="w-full rounded-xl object-cover"
         />
-        <button>
+        <button className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md">
           <img src={addToCartIcon} alt="add-button" className="w-5 h-5" />
-          <span className="text-custom-rose-900 text-sm">Add to Cart</span>
+          <span className="text-custom-rose-900 text-sm font-semibold">
+            Add to Cart
+          </span>
         </button>
       </div>
       <div className="mt-10 px-1">
@@ -20,7 +22,7 @@ export default function ProductCard({ product }) {
           {product.name}
         </h3>
         <p className="font-bold text-lg mt-1 text-custom-red">
-          ${product.price.tofixed(2)}
+          ${product.price.toFixed(2)}
         </p>
       </div>
     </div>
