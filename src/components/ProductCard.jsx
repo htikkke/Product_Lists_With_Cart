@@ -9,9 +9,9 @@ export default function ProductCard({ product }) {
           alt={product.name}
           className="w-full rounded-xl object-cover"
         />
-        <button className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md">
+        <button className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md cursor-pointer group">
           <img src={addToCartIcon} alt="add-button" className="w-5 h-5" />
-          <span className="text-custom-rose-900 text-sm font-semibold">
+          <span className="text-custom-rose-900 text-sm font-semibold group-hover:text-custom-red transition-colors">
             Add to Cart
           </span>
         </button>
