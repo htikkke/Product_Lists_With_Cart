@@ -1,9 +1,8 @@
 import addToCartIcon from "../assets/images/icon-add-to-cart.svg";
-import { useContext } from "react";
-import { FormContext } from "../App";
+import { useState } from "react";
 
 export default function ProductCard({ product }) {
-  const { quantity, setQuantity } = useContext(FormContext);
+  const [quantity, setQuantity] = useState(0);
 
   const handleIncrement = () => {
     setQuantity((prev) => prev + 1);
@@ -20,12 +19,35 @@ export default function ProductCard({ product }) {
           alt={product.name}
           className={`w-full rounded-xl object-cover border-3 ${quantity > 0 ? "border-custom-red" : "border-transparent"}`}
         />
-        <button className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md cursor-pointer group">
-          <img src={addToCartIcon} alt="add-button" className="w-5 h-5" />
-          <span className="text-custom-rose-900 text-sm font-semibold group-hover:text-custom-red transition-colors">
-            Add to Cart
-          </span>
-        </button>
+        {quantity === 0 ? (
+          <button
+            onClick={handleIncrement}
+            className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md cursor-pointer group"
+          >
+            <img src={addToCartIcon} alt="add-button" className="w-5 h-5" />
+            <span className="text-custom-rose-900 text-sm font-semibold group-hover:text-custom-red transition-colors">
+              Add to Cart
+            </span>
+          </button>
+        ) : (
+          <div className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-between bg-custom-red text-white rounded-full px-4 py-3 shadow-md">
+            {/* Minus-button */}
+            <button
+              onClick={handleDecrement}
+              className="w-6 h-6 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-custom-red transition-colors"
+            >
+              <span className="text-sm font-bold">-</span>
+            </button>
+            <span className="text-sm font-semibold">{quantity}</span>
+            {/* Plus-button */}
+            <button
+              onClick={handleIncrement}
+              className="w-6 h-6 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-custom-red transition-colors"
+            >
+              <span className="text-sm font-bold">+</span>
+            </button>
+          </div>
+        )}
       </div>
       <div className="mt-10 px-1">
         <p className="text-sm text-custom-rose-500">{product.category}</p>
