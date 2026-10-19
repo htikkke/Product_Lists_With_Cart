@@ -1,6 +1,17 @@
 import addToCartIcon from "../assets/images/icon-add-to-cart.svg";
+import { useContext } from "react";
+import { FormContext } from "../App";
 
 export default function ProductCard({ product }) {
+  const { quantity, setQuantity } = useContext(FormContext);
+
+  const handleIncrement = () => {
+    setQuantity((prev) => prev + 1);
+  };
+  const handleDecrement = () => {
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 0));
+  };
+
   return (
     <div className="flex flex-col mb-4 font-redhat">
       <div className="relative group">
