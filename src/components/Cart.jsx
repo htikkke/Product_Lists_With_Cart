@@ -1,8 +1,6 @@
 import noItem from "../assets/images/illustration-empty-cart.svg";
-import { useState } from "react";
 
 export default function Cart() {
-  const [quantity, setQuantity] = useState(0);
   return (
     <div
       id="cart-container"
