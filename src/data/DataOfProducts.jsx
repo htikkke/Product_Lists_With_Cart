@@ -1,3 +1,30 @@
+import waffleDesktop from "../assets/images/image-waffle-desktop.jpg";
+import waffleMobile from "../assets/images/image-waffle-mobile.jpg";
+
+import cremeDesktop from "../assets/images/image-creme-brulee-desktop.jpg";
+import cremeMobile from "../assets/images/image-creme-brulee-mobile.jpg";
+
+import macaronDesktop from "../assets/images/image-macaron-desktop.jpg";
+import macaronMobile from "../assets/images/image-macaron-mobile.jpg";
+
+import tiramisuDesktop from "../assets/images/image-tiramisu-desktop.jpg";
+import tiramisuMobile from "../assets/images/image-tiramisu-mobile.jpg";
+
+import baklavaDesktop from "../assets/images/image-baklava-desktop.jpg";
+import baklavaMobile from "../assets/images/image-baklava-mobile.jpg";
+
+import meringueDesktop from "../assets/images/image-meringue-desktop.jpg";
+import meringueMobile from "../assets/images/image-meringue-mobile.jpg";
+
+import cakeDesktop from "../assets/images/image-cake-desktop.jpg";
+import cakeMobile from "../assets/images/image-cake-mobile.jpg";
+
+import brownieDesktop from "../assets/images/image-brownie-desktop.jpg";
+import brownieMobile from "../assets/images/image-brownie-mobile.jpg";
+
+import pannaCottaDesktop from "../assets/images/image-panna-cotta-desktop.jpg";
+import pannaCottaMobile from "../assets/images/image-panna-cotta-mobile.jpg";
+
 const DataOfProducts = [
   {
     id: 1,
@@ -5,8 +32,8 @@ const DataOfProducts = [
     name: "Waffle with Berries",
     price: 6.5,
     image: {
-      desktop: "/assets/images/image-waffle-desktop.jpg",
-      mobile: "/assets/images/image-waffle-mobile.jpg",
+      desktop: waffleDesktop,
+      mobile: waffleMobile,
     },
   },
   {
@@ -15,8 +42,8 @@ const DataOfProducts = [
     name: "Vanilla Bean Crème Brûlée",
     price: 7.0,
     image: {
-      desktop: "/assets/images/image-creme-brulee-desktop.jpg",
-      mobile: "/assets/images/image-creme-brulee-mobile.jpg",
+      desktop: cremeDesktop,
+      mobile: cremeMobile,
     },
   },
   {
@@ -25,8 +52,8 @@ const DataOfProducts = [
     name: "Macaron Mix of Five",
     price: 8.0,
     image: {
-      desktop: "/assets/images/image-macaron-desktop.jpg",
-      mobile: "/assets/images/image-macaron-mobile.jpg",
+      desktop: macaronDesktop,
+      mobile: macaronMobile,
     },
   },
   {
@@ -35,8 +62,8 @@ const DataOfProducts = [
     name: "Classic Tiramisu",
     price: 5.5,
     image: {
-      desktop: "/assets/images/image-tiramisu-desktop.jpg",
-      mobile: "/assets/images/image-tiramisu-mobile.jpg",
+      desktop: tiramisuDesktop,
+      mobile: tiramisuMobile,
     },
   },
   {
@@ -45,8 +72,8 @@ const DataOfProducts = [
     name: "Pistachio Baklava",
     price: 4.0,
     image: {
-      desktop: "/assets/images/image-baklava-desktop.jpg",
-      mobile: "/assets/images/image-baklava-mobile.jpg",
+      desktop: baklavaDesktop,
+      mobile: baklavaMobile,
     },
   },
   {
@@ -55,8 +82,8 @@ const DataOfProducts = [
     name: "Lemon Meringue Pie",
     price: 5.0,
     image: {
-      desktop: "/assets/images/image-meringue-desktop.jpg",
-      mobile: "/assets/images/image-meringue-mobile.jpg",
+      desktop: meringueDesktop,
+      mobile: meringueMobile,
     },
   },
   {
@@ -65,8 +92,8 @@ const DataOfProducts = [
     name: "Red Velvet Cake",
     price: 4.5,
     image: {
-      desktop: "/assets/images/image-cake-desktop.jpg",
-      mobile: "/assets/images/image-cake-mobile.jpg",
+      desktop: cakeDesktop,
+      mobile: cakeMobile,
     },
   },
   {
@@ -75,8 +102,8 @@ const DataOfProducts = [
     name: "Salted Caramel Brownie",
     price: 5.5,
     image: {
-      desktop: "/assets/images/image-brownie-desktop.jpg",
-      mobile: "/assets/images/image-brownie-mobile.jpg",
+      desktop: brownieDesktop,
+      mobile: brownieMobile,
     },
   },
   {
@@ -85,9 +112,10 @@ const DataOfProducts = [
     name: "Vanilla Panna Cotta",
     price: 6.5,
     image: {
-      desktop: "/assets/images/image-panna-cotta-desktop.jpg",
-      mobile: "/assets/images/image-panna-cotta-mobile.jpg",
+      desktop: pannaCottaDesktop,
+      mobile: pannaCottaMobile,
     },
   },
 ];
+
 export default DataOfProducts;
