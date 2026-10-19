@@ -18,7 +18,7 @@ export default function ProductCard({ product }) {
         <img
           src={product.image.desktop}
           alt={product.name}
-          className="w-full rounded-xl object-cover"
+          className={`w-full rounded-xl object-cover border-3 ${quantity > 0 ? "border-custom-red" : "border-transparent"}`}
         />
         <button className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md cursor-pointer group">
           <img src={addToCartIcon} alt="add-button" className="w-5 h-5" />
