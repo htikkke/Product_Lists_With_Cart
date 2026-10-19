@@ -1,10 +1,12 @@
 import noItem from "../assets/images/illustration-empty-cart.svg";
+import { useState } from "react";
 
 export default function Cart() {
+  const [quantity, setQuantity] = useState(0);
   return (
     <div
       id="cart-container"
-      className="md:col-span-1 w-full p-6 rounded-xl font-redhat bg-white h-auto shadow-sm"
+      className="md:col-span-1 w-full p-6 rounded-xl font-redhat bg-white h-fit shadow-sm"
     >
       {/* Cart Title */}
       <h3 className="text-custom-red text-xl font-bold mb-6">Your Cart (0)</h3>
