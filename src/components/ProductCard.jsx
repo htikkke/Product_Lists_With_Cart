@@ -1,4 +1,4 @@
-import addToCartIcon from "../../public/assets/images/icon-add-to-cart.svg";
+import addToCartIcon from "../assets/images/icon-add-to-cart.svg";
 
 export default function ProductCard({ product }) {
   return (
