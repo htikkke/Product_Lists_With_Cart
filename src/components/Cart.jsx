@@ -1,6 +1,16 @@
 import noItem from "../assets/images/illustration-empty-cart.svg";
+import { useContext } from "react";
+import { CartContext } from "./cartContext";
 
 export default function Cart() {
+  const { cart, handleUpdateCart } = useContext(CartContext);
+
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const orderTotal = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
+
   return (
     <div
       id="cart-container"
