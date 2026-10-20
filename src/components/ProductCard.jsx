@@ -1,14 +1,18 @@
 import addToCartIcon from "../assets/images/icon-add-to-cart.svg";
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "./cartContext";
 
 export default function ProductCard({ product }) {
-  const [quantity, setQuantity] = useState(0);
+  const { cart, handleUpdateCart } = useContext(CartContext);
+
+  const cartItem = cart.find((item) => item.name === product.name);
+  const quantity = cartItem ? cartItem.quantity : 0;
 
   const handleIncrement = () => {
-    setQuantity((prev) => prev + 1);
+    handleUpdateCart(product, quantity + 1);
   };
   const handleDecrement = () => {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 0));
+    handleUpdateCart(product, quantity - 1);
   };
 
   return (
