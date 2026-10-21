@@ -1,4 +1,5 @@
 import noItem from "../assets/images/illustration-empty-cart.svg";
+import crossIcon from "../assets/images/icon-remove-item.svg";
 import { useContext } from "react";
 import { CartContext } from "./cartContext";
 
@@ -58,9 +59,13 @@ export default function Cart() {
                 {/* Remove-item button */}
                 <button
                   onClick={() => handleUpdateCart(item, 0)}
-                  className="w-5 h-5 rounded-full border border-custom-rose-400 flex items-center justify-center text-custom-rose-400 hover:text-custom-rose-900 hover:border-custom-rose-900 transition-colors text-xs"
+                  className="w-5 h-5 rounded-full border border-custom-rose-400 flex items-center justify-center text-custom-rose-400 hover:text-custom-rose-900 hover:border-custom-rose-900 transition-colors text-xs cursor-pointer group"
                 >
-                  ✕
+                  <img
+                    src={crossIcon}
+                    alt="Remove item"
+                    className="w-2.5 h-2.5 cursor-pointer"
+                  />
                 </button>
               </div>
             ))}
