@@ -64,6 +64,11 @@ export default function Cart() {
                 </button>
               </div>
             ))}
+            {/* Total */}
+            <div className="flex items-center justify-between mt-4">
+              <p className="text-custom-rose-500 text-sm">Order Total</p>
+              <p className="font-bold text-2xl">${orderTotal.toFixed(2)}</p>
+            </div>
           </div>
         </div>
       )}
