@@ -84,6 +84,10 @@ export default function Cart() {
                 delivery
               </p>
             </div>
+            {/* Confrim-order-button */}
+            <button className="mt-6 w-full bg-custom-red hover:bg-red-700 text-white font-semibold py-3.5 rounded-full transition-colors text-sm cursor-pointer">
+              Confrim Order
+            </button>
           </div>
         </div>
       )}
