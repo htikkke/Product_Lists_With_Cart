@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { CartContext } from "./cartContext";
 
 export default function Cart() {
-  const { cart, handleUpdateCart } = useContext(CartContext);
+  const { cart, handleUpdateCart, setConfirmed } = useContext(CartContext);
 
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
   const orderTotal = cart.reduce(
@@ -85,7 +85,10 @@ export default function Cart() {
               </p>
             </div>
             {/* Confrim-order-button */}
-            <button className="mt-6 w-full bg-custom-red hover:bg-red-700 text-white font-semibold py-3.5 rounded-full transition-colors text-sm cursor-pointer">
+            <button
+              onClick={() => setConfirmed(true)}
+              className="mt-6 w-full bg-custom-red hover:bg-red-700 text-white font-semibold py-3.5 rounded-full transition-colors text-sm cursor-pointer"
+            >
               Confrim Order
             </button>
           </div>
