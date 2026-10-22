@@ -22,8 +22,17 @@ export default function CartProvider({ children }) {
   const handleRemoveItem = (productName) => {
     setCart((prevCart) => prevCart.filter((item) => item.name !== productName));
   };
+  const [confirmed, setConfirmed] = useState(false);
   return (
-    <CartContext.Provider value={{ cart, handleUpdateCart, handleRemoveItem }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        handleUpdateCart,
+        handleRemoveItem,
+        confirmed,
+        setConfirmed,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
