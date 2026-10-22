@@ -1,5 +1,6 @@
 import noItem from "../assets/images/illustration-empty-cart.svg";
 import crossIcon from "../assets/images/icon-remove-item.svg";
+import carbonIcon from "../assets/images/icon-carbon-neutral.svg";
 import { useContext } from "react";
 import { CartContext } from "./cartContext";
 
@@ -73,6 +74,15 @@ export default function Cart() {
             <div className="flex items-center justify-between mt-4">
               <p className="text-custom-rose-500 text-sm">Order Total</p>
               <p className="font-bold text-2xl">${orderTotal.toFixed(2)}</p>
+            </div>
+            {/* Safe-delivery-alert */}
+            <div className="mt-6 bg-custom-rose-50 p-4 rounded-lg flex items-center justify-center space-x-2 text-sm text-custom-rose-900">
+              <img src={carbonIcon} />
+              <p>
+                This is a{" "}
+                <strong className="font-semibold">carbon-neutral</strong>{" "}
+                delivery
+              </p>
             </div>
           </div>
         </div>
