@@ -5,14 +5,8 @@ import { useContext } from "react";
 import { CartContext } from "./cartContext";
 
 export default function Cart() {
-  const { cart, handleUpdateCart, setConfirmed } = useContext(CartContext);
-
-  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const orderTotal = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0,
-  );
-
+  const { cart, handleUpdateCart, setConfirmed, orderTotal, totalQuantity } =
+    useContext(CartContext);
   return (
     <div
       id="cart-container"
