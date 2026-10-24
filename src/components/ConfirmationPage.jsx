@@ -10,7 +10,7 @@ export default function ConfirmationPage() {
       {/* confirm-container */}
       <div
         id="confirm-container"
-        className="max-w-full w-1/3 p-6 rounded-xl font-redhat bg-white h-fit shadow-sm max-[1025px]:w-1/2"
+        className="w-full p-6 rounded-xl font-redhat bg-white h-fit shadow-sm sm:w-1/2 lg:w-1/3"
       >
         <img src={confirmIcon} />
         <h1 className="font-bold text-3xl mt-5">Order Confirmed</h1>
@@ -18,7 +18,7 @@ export default function ConfirmationPage() {
           We hope you enjoy your food!
         </p>
         {/* orders */}
-        <div className="divide-y divide-custom-rose-100 bg-custom-rose-50 mt-8 rounded-xl p-4">
+        <div className="divide-y divide-custom-rose-100 bg-custom-rose-50 mt-8 rounded-xl p-4 overflow-y-auto max-h-56">
           {cart.map((item) => (
             <div key={item.name} className="flex items-center justify-between">
               <div className="py-4 flex items-center justify-between space-x-4">
