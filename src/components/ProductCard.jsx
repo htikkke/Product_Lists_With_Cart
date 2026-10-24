@@ -26,7 +26,7 @@ export default function ProductCard({ product }) {
         {quantity === 0 ? (
           <button
             onClick={handleIncrement}
-            className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md cursor-pointer group"
+            className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md cursor-pointer group max-[1025px]:w-3/4"
           >
             <img src={addToCartIcon} alt="add-button" className="w-5 h-5" />
             <span className="text-custom-rose-900 text-sm font-semibold group-hover:text-custom-red transition-colors">
@@ -34,7 +34,7 @@ export default function ProductCard({ product }) {
             </span>
           </button>
         ) : (
-          <div className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-between bg-custom-red text-white rounded-full px-4 py-3 shadow-md">
+          <div className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-between bg-custom-red text-white rounded-full px-4 py-3 shadow-md max-[1025px]:w-3/4">
             {/* Minus-button */}
             <button
               onClick={handleDecrement}
