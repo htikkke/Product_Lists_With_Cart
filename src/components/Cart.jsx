@@ -7,6 +7,13 @@ import { CartContext } from "./cartContext";
 export default function Cart() {
   const { cart, handleUpdateCart, setConfirmed, orderTotal, totalQuantity } =
     useContext(CartContext);
+  // for keyboard user
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setConfirmed(true);
+    }
+  };
   return (
     <div
       id="cart-container"
@@ -83,6 +90,7 @@ export default function Cart() {
             {/* Confrim-order-button */}
             <button
               onClick={() => setConfirmed(true)}
+              onKeyDown={handleKeyDown}
               className="mt-6 w-full bg-custom-red hover:bg-red-700 text-white font-semibold py-3.5 rounded-full transition-colors text-sm cursor-pointer"
             >
               Confirm Order

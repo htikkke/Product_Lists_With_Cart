@@ -3,17 +3,17 @@ import { useContext, useEffect } from "react";
 import { CartContext } from "./cartContext";
 
 export default function ConfirmationPage() {
-  const { cart, orderTotal, setConfirmed } = useContext(CartContext);
-  // For Escape-button
+  const { cart, orderTotal, handleStartNewOrder } = useContext(CartContext);
+  // Keyboard Escape key support
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
-        setConfirmed(false);
+        handleStartNewOrder();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [setConfirmed]);
+  }, [handleStartNewOrder]);
 
   return (
     // confirm-container-warpper
@@ -73,7 +73,7 @@ export default function ConfirmationPage() {
         </div>
         {/* New-order-button */}
         <button
-          onClick={() => setConfirmed(false)}
+          onClick={handleStartNewOrder}
           autoFocus
           className="mt-6 w-full bg-custom-red hover:bg-red-700 text-white font-semibold py-3.5 rounded-full transition-colors text-sm cursor-pointer"
         >
