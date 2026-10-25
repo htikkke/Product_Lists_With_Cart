@@ -1,16 +1,44 @@
-# React + Vite
+# 🍰 Dessert E-Commerce Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive e-commerce web application built with React, Vite, and Tailwind CSS, featuring a shopping cart system, dynamic total calculations, order confirmation modal, and accessibility (A11y) support.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Product Catalog:** Browse various desserts with responsive grid layouts.
+- **Interactive Cart System:** Add, remove, and update quantities dynamically.
+- **State Management:** Powered by React Context API (`CartContext`).
+- **Order Confirmation Modal:** Displays a summary of purchased items with total pricing.
+- **Keyboard & Screen Reader Accessibility:** Full support for `Enter`, `Space`, `Escape` keys, and ARIA labels.
+- **Responsive Design:** Optimized for mobile phones, tablets, and desktop screens.
 
-## React Compiler
+## 🛠️ Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** (Functional Components & Hooks)
+- **Vite** (Build Tool)
+- **Tailwind CSS** (Styling)
+- **Context API** (State Management)
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <https://github.com/htikkke/Product_Lists_With_Cart.git>
+   Navigate to the project directory:
+
+   ```
+
+2. cd <Products_With_Cart>
+   Install dependencies:
+
+3. npm install
+   Run the development server:
+
+4. npm run dev
+   Open in browser:
+   Open http://localhost:5173 to view the app.
+   ```
+
+   ```
