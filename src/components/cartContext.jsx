@@ -19,17 +19,24 @@ export default function CartProvider({ children }) {
       }
     });
   };
+
   const handleRemoveItem = (productName) => {
     setCart((prevCart) => prevCart.filter((item) => item.name !== productName));
   };
+
   const [confirmed, setConfirmed] = useState(false);
   // Calculate-Order-Total
   const orderTotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0,
   );
+
   // Calculate-Quantity-Total
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const handleStartNewOrder = () => {
+    setCart([]);
+    setConfirmed(false);
+  };
   return (
     <CartContext.Provider
       value={{
@@ -40,6 +47,7 @@ export default function CartProvider({ children }) {
         setConfirmed,
         orderTotal,
         totalQuantity,
+        handleStartNewOrder,
       }}
     >
       {children}
