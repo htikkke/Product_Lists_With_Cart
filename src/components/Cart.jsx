@@ -29,7 +29,7 @@ export default function Cart() {
         </div>
       ) : (
         <div className="flex flex-col">
-          <div className="divide-y divide-custom-rose-100">
+          <div className="divide-y divide-custom-rose-100 max-h-80 overflow-y-auto pr-1">
             {cart.map((item) => (
               <div
                 key={item.name}
@@ -54,11 +54,13 @@ export default function Cart() {
                 {/* Remove-item button */}
                 <button
                   onClick={() => handleUpdateCart(item, 0)}
+                  aria-label={`Remove ${item.name} from cart`}
                   className="w-5 h-5 rounded-full border border-custom-rose-400 flex items-center justify-center text-custom-rose-400 hover:text-custom-rose-900 hover:border-custom-rose-900 transition-colors text-xs cursor-pointer group"
                 >
                   <img
                     src={crossIcon}
-                    alt="Remove item"
+                    alt=""
+                    aria-hidden="true"
                     className="w-2.5 h-2.5 cursor-pointer"
                   />
                 </button>
@@ -83,7 +85,7 @@ export default function Cart() {
               onClick={() => setConfirmed(true)}
               className="mt-6 w-full bg-custom-red hover:bg-red-700 text-white font-semibold py-3.5 rounded-full transition-colors text-sm cursor-pointer"
             >
-              Confrim Order
+              Confirm Order
             </button>
           </div>
         </div>

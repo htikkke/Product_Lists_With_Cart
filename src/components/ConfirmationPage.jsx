@@ -1,22 +1,41 @@
 import confirmIcon from "../assets/images/icon-order-confirmed.svg";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "./cartContext";
 
 export default function ConfirmationPage() {
   const { cart, orderTotal, setConfirmed } = useContext(CartContext);
+  // For Escape-button
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setConfirmed(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [setConfirmed]);
+
   return (
     // confirm-container-warpper
-    <div className="fixed inset-0 bg-black/20 flex items-center justify-center">
+    <div
+      className="fixed inset-0 bg-black/20 flex items-center justify-center z-50"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="order-confirmed-title"
+    >
       {/* confirm-container */}
       <div
         id="confirm-container"
         className="w-full p-6 rounded-xl font-redhat bg-white h-fit shadow-sm sm:w-1/2 lg:w-1/3"
       >
-        <img src={confirmIcon} />
-        <h1 className="font-bold text-3xl mt-5">Order Confirmed</h1>
+        <img src={confirmIcon} alt="" aria-hidden="true" />
+        <h1 id="order-confirmed-title" className="font-bold text-3xl mt-5">
+          Order Confirmed
+        </h1>
         <p className="text-custom-rose-400 mt-3">
           We hope you enjoy your food!
         </p>
+
         {/* orders */}
         <div className="divide-y divide-custom-rose-100 bg-custom-rose-50 mt-8 rounded-xl p-4 overflow-y-auto max-h-56">
           {cart.map((item) => (
@@ -55,6 +74,7 @@ export default function ConfirmationPage() {
         {/* New-order-button */}
         <button
           onClick={() => setConfirmed(false)}
+          autoFocus
           className="mt-6 w-full bg-custom-red hover:bg-red-700 text-white font-semibold py-3.5 rounded-full transition-colors text-sm cursor-pointer"
         >
           Start New Order
