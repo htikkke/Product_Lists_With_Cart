@@ -26,9 +26,15 @@ export default function ProductCard({ product }) {
         {quantity === 0 ? (
           <button
             onClick={handleIncrement}
+            aria-label={`Add ${product.name} to cart`}
             className="absolute left-1/2 -translate-x-1/2 -bottom-5 w-1/2 flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 border border-custom-red shadow-md cursor-pointer group max-[1025px]:w-3/4"
           >
-            <img src={addToCartIcon} alt="add-button" className="w-5 h-5" />
+            <img
+              src={addToCartIcon}
+              alt=""
+              aria-hidden="true"
+              className="w-5 h-5"
+            />
             <span className="text-custom-rose-900 text-sm font-semibold group-hover:text-custom-red transition-colors">
               Add to Cart
             </span>
@@ -38,6 +44,7 @@ export default function ProductCard({ product }) {
             {/* Minus-button */}
             <button
               onClick={handleDecrement}
+              aria-label={`Decrease quantity of ${product.name}`}
               className="w-6 h-6 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-custom-red transition-colors"
             >
               <span className="text-sm font-bold">-</span>
@@ -46,6 +53,7 @@ export default function ProductCard({ product }) {
             {/* Plus-button */}
             <button
               onClick={handleIncrement}
+              aria-label={`Increase quantity of ${product.name}`}
               className="w-6 h-6 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-custom-red transition-colors"
             >
               <span className="text-sm font-bold">+</span>

@@ -3,8 +3,8 @@ import ProductCard from "./ProductCard";
 
 export default function Desserts() {
   return (
-    <div id="desserts-container" className="md:col-span-3 font-redhat">
-      <header className="text-3xl font-bold mb-8">Desserts</header>
+    <section id="desserts-container" className="md:col-span-3 font-redhat">
+      <h1 className="text-3xl font-bold mb-8">Desserts</h1>
       {/* Product-Grid-Container */}
       <div
         id="products-container"
@@ -14,6 +14,6 @@ export default function Desserts() {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
